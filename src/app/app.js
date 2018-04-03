@@ -8,10 +8,9 @@ require('./components/about/about.js');
 require('./components/login/login.js');
 require("./services/user.service.js");
 
-var app = angular.module('myApp', ['ui.router','ngMaterial','myApp.home','myApp.about' ,'myApp.login','myApp.user.service']);
+var app = angular.module('myApp', ['ui.router','ngMaterial','myApp.home','myApp.about' ,'myApp.login','myApp.common.service']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-console.log(config);
 
 	$stateProvider
 

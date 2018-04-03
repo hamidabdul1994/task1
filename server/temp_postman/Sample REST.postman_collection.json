@@ -1,0 +1,256 @@
+{
+	"id": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+	"name": "Sample REST",
+	"description": "",
+	"order": [
+		"cb700efd-dac0-271b-5efa-8a40795804ca",
+		"47868edf-9db9-09af-8318-ec67ab06f7f0",
+		"35f6f0f8-7c5a-cb21-5893-d3cebde1e013",
+		"6fea1441-7b69-e28f-462a-ed877bb756fe",
+		"2a5f718e-5929-156e-33dc-da41d3fc706e",
+		"78d5c85e-23c0-2680-ae99-957f0101655d"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1519442276218,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "2a5f718e-5929-156e-33dc-da41d3fc706e",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/api/readAllEmployee",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519480959780,
+			"name": "Read All Employee",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		},
+		{
+			"id": "35f6f0f8-7c5a-cb21-5893-d3cebde1e013",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/updateEmployee",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "firstName",
+					"value": "Hamid Raza",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "lastName",
+					"value": "Noori",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "emailAddress",
+					"value": "noorihamid1994@gmail.com",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "phoneNumber",
+					"value": "9821671797",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519478814304,
+			"name": "Update Employee",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		},
+		{
+			"id": "47868edf-9db9-09af-8318-ec67ab06f7f0",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/api/readEmployee?emailAddress=noorihamid1994@gmail.com",
+			"queryParams": [
+				{
+					"key": "emailAddress",
+					"value": "noorihamid1994@gmail.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519478977708,
+			"name": "Read Employee",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		},
+		{
+			"id": "6fea1441-7b69-e28f-462a-ed877bb756fe",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/api/deleteEmployee?emailAddress=noorihamid1994@gmail.com",
+			"queryParams": [
+				{
+					"key": "emailAddress",
+					"value": "noorihamid1994@gmail.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519480706243,
+			"name": "Delete Employee",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		},
+		{
+			"id": "78d5c85e-23c0-2680-ae99-957f0101655d",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/api/uploadUserPicture",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "emailAddress",
+					"value": "n1oorihamid1994@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image",
+					"value": "tr-b-1.png",
+					"description": "",
+					"type": "file",
+					"enabled": false
+				},
+				{
+					"key": "imageUrl",
+					"value": "https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519624850252,
+			"name": "upload User Picture",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		},
+		{
+			"id": "cb700efd-dac0-271b-5efa-8a40795804ca",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/addEmployee",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "firstName",
+					"value": "Hamid",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "lastName",
+					"value": "Noori",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "emailAddress",
+					"value": "noorihamid1994@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phoneNumber",
+					"value": "9821671797",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1519617617237,
+			"name": "Add Employee",
+			"description": "",
+			"collectionId": "bd79eed1-8316-29a7-5b67-b2b8aba322c9",
+			"responses": []
+		}
+	]
+}
