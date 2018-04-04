@@ -38,14 +38,17 @@ gulp.task('browserify', function() {
 })
 
 gulp.task('copy', ['browserify','scss'], function() {
-    gulp.src(['./src/**/*.html','./src/**/*.css','./node_modules/angular-material/angular-material.min.css'])
+    gulp.src(['./src/**/*.html','./src/**/*.css'])
         .pipe(gulp.dest('./public'))
 		.pipe(browserSync.stream())
 });
 
 gulp.task('scss', function() {
-    gulp.src('./src/assets/scss/*.scss')
+    gulp.src(['./src/assets/scss/*.scss'])
         .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+          includePaths: ['node_modules/angular-material/']
+        }))
         .pipe(gulp.dest('./src/assets/stylesheets/'));
 });
 
