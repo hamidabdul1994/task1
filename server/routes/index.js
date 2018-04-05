@@ -6,16 +6,7 @@ var path = require('path');
 var profileController = require("../controllers").pictureController;
 var userController = require("../controllers").usersController;
 
-// multer Object
-// var storage = multer.diskStorage({
-// 	destination: function(req, file, callback) {
-// 		callback(null, './uploads')
-// 	},
-// 	filename: function(req, file, callback) {
-// 		console.log(file)
-// 		callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-// 	}
-// });
+router.post("/login",userController.loginValidator , userController.login)
 
 /* POST */
 router.post('/addEmployee' , userController.addEmployeeValidator , userController.addEmployee);
@@ -45,7 +36,7 @@ module.exports = router;
 //             callback(null, true)
 //         }
 //     }).single('image');
-    
+
 //     upload(req, res, function(err) {
 //         next(err);
 //     })

@@ -3,6 +3,21 @@ var commonService = require("../services").commonService;
 const { check, validationResult } = require('express-validator/check');
 
 module.exports = {
+    login : function(req,res,next){
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return next(errors.array({ onlyFirstError: true })[0] || {});
+      }
+        userService.login(req.body,function(err,data){
+          if(err)
+              return next(err);
+          let responseObj = commonService.response;
+          responseObj.setStatus(true);
+          responseObj.setMessage("Successfully login");
+          responseObj.setData(data);
+          res.send(responseObj);
+      });
+    },
     addEmployee:function(req,res,next){
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -33,7 +48,7 @@ module.exports = {
             res.send(responseObj);
         })
     },
-        
+
     deleteEmployee : function(req,res,next){
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -48,7 +63,7 @@ module.exports = {
         responseObj.setMessage("Successfully removed employee data.");
         responseObj.setData();
         res.send(responseObj);
-    
+
         })
     },
     readEmployee : function(req,res,next){
@@ -92,6 +107,15 @@ module.exports = {
             next();
         });
     },
+    loginValidator :[
+      check('emailAddress')
+      .isEmail().withMessage('emailAddress ,must be an email')
+      .trim()
+      .normalizeEmail(),
+
+      check("password","password Must have value")
+      .exists(),
+    ],
     commonValidator : [
         check('emailAddress')
         .isEmail().withMessage('emailAddress ,must be an email')
@@ -114,16 +138,19 @@ module.exports = {
         //         throw new Error('this email is already in use');
         //   })
         // }),
-        
+
         check("phoneNumber","phoneNumber is required")
         .exists()
         .isInt()
         .isLength({ min: 10 }),
-        
+
         check("firstName","firstName Must have value")
         .exists(),
-    
+
         check("lastName","lastName Must have value")
+        .exists(),
+
+        check("password","password Must have value")
         .exists()
     ]
 }

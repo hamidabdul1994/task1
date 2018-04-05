@@ -42,8 +42,8 @@ app.use(function(err, req, res, next) {
   responseObj.setStatus(false);
   responseObj.setMessage(err.message || err.msg || "Something bad happened try again");
   responseObj.setData();
-  if(!config.isProduction)
-    console.trace(err);
+  // if(!config.isProduction)
+  //   console.trace(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 

@@ -4,7 +4,11 @@
  ***/
 var UserModel = require("../model").userModel;
 
-function UserService(){} 
+function UserService(){}
+
+UserService.prototype.login = function (userObj,callback){
+    UserModel.login(userObj,callback);
+};
 
 UserService.prototype.saveUSer = function(userObj,callback){
     UserModel.saveUser(userObj,callback)
